@@ -1,0 +1,49 @@
+{
+  "slug": "gallery-marginalia",
+  "family": "visual-thinking",
+  "useCase": "Annotated galleries and image-led collections: art/photo study vaults, exhibit notes, media logs and reference boards where images sit beside their commentary.",
+  "distinctFeatures": [
+    "Images and embeds render as matted, framed exhibits with a soft shadow",
+    "Small-caps headings with a hairline rule; H1 gets a gold rule",
+    "Blockquotes styled as wall-label annotation cards",
+    "Catalogue links use gold cross-references with underline cues",
+    "Uppercase museum-label tags"
+  ],
+  "modes": [
+    "light",
+    "dark"
+  ],
+  "contrastTokens": {
+    "normalText": {
+      "light": "#26221d",
+      "dark": "#ece7df"
+    },
+    "mutedText": {
+      "light": "#5c554b",
+      "dark": "#a89f92"
+    },
+    "link": {
+      "light": "#7a4e00",
+      "dark": "#e0b060"
+    },
+    "uiFocus": {
+      "light": "#7a4e00",
+      "dark": "#e0b060"
+    }
+  },
+  "backgrounds": {
+    "light": "#faf8f4",
+    "dark": "#1a1816"
+  },
+  "fonts": {
+    "text": "\"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", Palatino, Georgia, serif",
+    "interface": "\"Avenir Next\", \"Segoe UI\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "monospace": "\"SFMono-Regular\", \"Menlo\", \"Consolas\", monospace"
+  },
+  "verification": {
+    "localGate": "pending",
+    "independentCodeGate": "pending",
+    "visualReview": "pending",
+    "releaseReady": false
+  }
+}

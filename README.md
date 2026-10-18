@@ -1,73 +1,77 @@
 # Gallery Marginalia
 
-Framed images and label typography for your annotated galleries.
-
-This is a preview theme with light and dark modes.
-
-## Preview status
-
-An independent review scored this version 75/100 on 14 October 2026.
-The NoteMods acceptance gate requires at least 95/100. This version remains on hold.
-Obsidian directory approval is not claimed.
-
-## Design
-
-- Matted image frames.
-- Wall label quote cards.
-- Gold heading rules.
-
-These styles change presentation. They do not add application features or plugins.
+Gallery Marginalia is for image collections, exhibition notes and visual research.
+Warm paper and dark charcoal support serif text and gold rules.
+Images have mat frames. Quotes and callouts use gallery labels.
+Tables use catalogue rows. Small-cap headings separate the exhibits.
 
 ## Screenshots
 
-These are unaltered captures from Obsidian 1.14.4 with a test note.
-They show Live Preview and Reading view side by side.
+These images show the desktop renderer with a test note.
 
-### Light mode
+![Light reading view](images/light-main-1280-preview.jpg)
+![Dark reading view](images/dark-main-1280-preview.jpg)
+![Content blocks](images/light-preview-table.jpg)
+![Narrow reading view](images/dark-main-420-preview.jpg)
 
-![Gallery Marginalia in light mode](./images/light.jpg)
+## Install
 
-### Dark mode
+1. Download `theme.css` and `manifest.json` from this repository.
+2. Open your vault folder.
+3. Create `.obsidian/themes/Gallery Marginalia/`.
+4. Copy both files into that folder.
+5. Open Settings in Obsidian.
+6. Select Appearance.
+7. Select Gallery Marginalia in the theme list.
 
-![Gallery Marginalia in dark mode](./images/dark.jpg)
+Use the folder name `Gallery Marginalia`, as written in the manifest.
+The repository name is not the installation folder name.
 
-## Install the preview
+## Uninstall
 
-1. Download `theme.css` and `manifest.json` from the `1.0.0` release.
-2. Open your vault folder. Show hidden folders if necessary.
-3. Create `.obsidian/themes/Gallery Marginalia/` inside the vault.
-4. Put both files in that folder. Keep their file names unchanged.
-5. Open Obsidian. Go to Settings, then Appearance.
-6. Select `Gallery Marginalia` in the Themes list. Restart Obsidian if it is absent.
+1. Open Settings, then Appearance.
+2. Select the default theme.
+3. Remove `.obsidian/themes/Gallery Marginalia/` if you no longer need it.
 
-You can also copy these two files from the repository.
-The manifest declares Obsidian 1.5.0 as the minimum version.
-The captures verify only the desktop version stated above.
+Your notes remain in the vault.
 
-## Remove the preview
+## Compatibility
 
-Select the default theme in Settings, then Appearance.
-You can then remove the `Gallery Marginalia` folder from `.obsidian/themes/`.
-Your note files remain in your vault.
+The minimum declared Obsidian version is 1.5.0.
+The desktop renderer was tested with Obsidian 1.14.4.
+Mobile was not tested. A narrow desktop capture does not test a mobile device.
+The current revision needs independent review against the NoteMods 95-point gate.
+
+## Customize
+
+Put changes in a CSS snippet. Enable it in Settings, then Appearance.
+The theme uses system fonts. It has no Style Settings panel.
+
+```css
+body.theme-light,
+body.theme-dark {
+  --file-line-width: 44rem;
+  --font-text-theme: Georgia, serif;
+  --gallery-mat: var(--background-secondary);
+  --gallery-shadow: none;
+}
+```
+
+`--gallery-rule` controls the gold rules.
+`--h1-size` through `--h6-size` control heading sizes.
+Check text and border contrast after you change colors.
 
 ## Known limits
 
-- Desktop captures use Obsidian 1.14.4. Real mobile device use has not been verified.
-- A narrow desktop capture does not prove mobile compatibility.
-- Full keyboard navigation and assistive technology checks remain incomplete.
-- Decorative separators can have low contrast. This theme has no accessibility certification.
-- Font rendering can change with your operating system and installed fonts.
-- Community plugins can change the layout. Their compatibility has not been verified.
+- Image frames add space around images. Use a CSS snippet to remove their border for edge-to-edge diagrams.
+- Small caps depend on the installed serif font. Georgia is a fallback.
+- H4 through H6 use uppercase labels. Long headings can wrap on narrow panes.
+- Wide tables and code blocks can need horizontal scrolling.
+- Callout types share the gallery palette. Titles and icons identify the type. Warning and danger callouts also have distinct borders.
+- Plugin views can use their own styles. They were not part of the fixture test.
+- Automated contrast checks do not certify WCAG conformance. Screen reader use has not been tested.
 
-## Feedback
+## License
 
-Open an issue with your Obsidian version, operating system, selected mode, and steps to reproduce the problem.
-Use a test note. Remove personal information from screenshots before you send them.
-
-## Credits and licence
-
-The original manifest credits Visual Thinking Factory (U19).
-NoteMods maintains this preview repository. The original CSS, manifest, and licence are preserved.
-See [LICENSE](./LICENSE) for the MIT terms.
-
-[View the NoteMods catalog](https://notemods.com/themes/).
+[MIT License](LICENSE). The original copyright notice is retained.
+NoteMods maintains this theme.
