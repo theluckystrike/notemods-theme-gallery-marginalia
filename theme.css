@@ -357,7 +357,7 @@ body.theme-dark :focus-visible:not(.cm-content) {
   border-top-width: 4px;
 }
 .callout[data-callout="danger"], .callout[data-callout="failure"] {
-  border-inline-start-width: 4px;
+  border-inline-start-width: 3px;
 }
 .markdown-rendered pre { overflow-x: auto; }
 .markdown-preview-view .table-wrapper { overflow-x: auto; overflow-y: hidden; }
@@ -439,8 +439,52 @@ body.theme-light, body.theme-dark {
 }
 .suggestion-item.is-selected :is(.suggestion-title, .suggestion-note, .suggestion-hotkey, .suggestion-flair) { color: inherit; }
 body.theme-dark { --interactive-normal: #3b352e; --interactive-hover: #484036; }
-button, select, .dropdown { border: 1px solid var(--background-modifier-border); }
+button:not(.clickable-icon), select, .dropdown { border: 1px solid var(--background-modifier-border); }
 body.theme-light .clickable-icon:focus-visible,
 body.theme-dark .clickable-icon:focus-visible { opacity: 1; }
 .workspace-ribbon { border-inline-end: 1px solid var(--background-modifier-border); }
 .nav-folder-title-content { font-variant: small-caps; letter-spacing: 0.04em; }
+
+/* Three-pixel type spines make the placards deliberate. */
+body .callout { border-inline-start: 3px solid var(--callout-color); }
+body.theme-light .callout { --gallery-note: #52638c; --gallery-info: #346d69; --gallery-todo: #805c3b; --gallery-tip: #546d34; --gallery-success: #3d6c47; --gallery-question: #7b5e8c; --gallery-warning: #885d1d; --gallery-danger: #9b453e; --gallery-bug: #925375; --gallery-example: #655783; --gallery-quote: #70675b; }
+body.theme-dark .callout { --gallery-note: #aab7d6; --gallery-info: #8ecbc0; --gallery-todo: #d4b58c; --gallery-tip: #bdc68a; --gallery-success: #9dc49d; --gallery-question: #cfafd9; --gallery-warning: #dfbb79; --gallery-danger: #e5a099; --gallery-bug: #daa1c3; --gallery-example: #bfb1d4; --gallery-quote: #c5b9a7; }
+body .callout { --callout-color: var(--gallery-note); }
+body .callout:is([data-callout="abstract"],[data-callout="info"],[data-callout="summary"],[data-callout="tldr"]) { --callout-color: var(--gallery-info); }
+body .callout[data-callout="todo"] { --callout-color: var(--gallery-todo); }
+body .callout:is([data-callout="tip"],[data-callout="hint"]) { --callout-color: var(--gallery-tip); }
+body .callout:is([data-callout="success"],[data-callout="check"],[data-callout="done"]) { --callout-color: var(--gallery-success); }
+body .callout:is([data-callout="question"],[data-callout="help"],[data-callout="faq"]) { --callout-color: var(--gallery-question); }
+body .callout:is([data-callout="warning"],[data-callout="caution"],[data-callout="attention"]) { --callout-color: var(--gallery-warning); }
+body .callout:is([data-callout="danger"],[data-callout="failure"],[data-callout="fail"],[data-callout="error"]) { --callout-color: var(--gallery-danger); }
+body .callout[data-callout="bug"] { --callout-color: var(--gallery-bug); }
+body .callout[data-callout="example"] { --callout-color: var(--gallery-example); }
+body .callout:is([data-callout="quote"],[data-callout="cite"]) { --callout-color: var(--gallery-quote); }
+body { --hr-thickness: 1px; --table-header-background: var(--background-secondary); --table-header-background-hover: var(--background-secondary); }
+body .markdown-source-view.mod-cm6 .cm-table-widget .table-wrapper { width: 100%; min-width: 100%; display: block; }
+body .markdown-source-view.mod-cm6 .cm-table-widget table { width: 100%; min-width: 100%; }
+body .markdown-source-view.mod-cm6 .cm-table-widget .table-wrapper table thead tr > th { background: var(--background-secondary); }
+body .markdown-source-view.mod-cm6 .HyperMD-quote:not(.HyperMD-callout):not(.HyperMD-quote + .HyperMD-quote) { border-start-start-radius: var(--radius-m); border-start-end-radius: var(--radius-m); }
+body .markdown-source-view.mod-cm6 .HyperMD-quote:not(.HyperMD-callout):not(:has(+ .HyperMD-quote)) { border-end-start-radius: var(--radius-m); border-end-end-radius: var(--radius-m); }
+body .markdown-source-view.mod-cm6 .HyperMD-hr hr { border: none; border-top: 1px solid var(--divider-color); height: 0; }
+body .markdown-source-view.mod-cm6 .list-bullet::after { margin-inline-end: 0.35em; }
+body .markdown-source-view.mod-cm6 { --list-indent: 1.75em; }
+body.theme-light .prompt-input-container input.prompt-input, body.theme-dark .prompt-input-container input.prompt-input { border: none; border-radius: 0; background: transparent; }
+body.theme-light .prompt-input-container input.prompt-input:focus-visible, body.theme-dark .prompt-input-container input.prompt-input:focus-visible { outline: none; box-shadow: inset 0 -2px 0 var(--gallery-rule); }
+
+/* Editor image widgets are outside markdown-rendered in Obsidian 1.14.4. */
+body .markdown-source-view.mod-cm6 .cm-content .image-embed {
+  display: flex; width: fit-content; max-width: 100%; margin: 1.1em auto;
+}
+body .markdown-source-view.mod-cm6 .cm-content .image-embed .image-wrapper { min-width: 0; max-width: 100%; }
+body .markdown-source-view.mod-cm6 .cm-content .image-embed .image-wrapper img {
+  border: 8px solid var(--gallery-mat); border-radius: var(--radius-s);
+  box-shadow: var(--gallery-shadow); background: var(--gallery-mat);
+  display: block; margin: 0; max-width: 100%; height: auto; box-sizing: border-box;
+}
+@media (max-width: 640px) {
+  body .markdown-source-view.mod-cm6 .cm-content .image-embed .image-wrapper img { border-width: 5px; }
+}
+
+/* Keep matched words legible on the highlight surface. */
+body .search-result-file-matched-text { color: var(--text-normal); }

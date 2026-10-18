@@ -4,6 +4,7 @@ Gallery Marginalia is for image collections, exhibition notes and visual researc
 Warm paper and dark charcoal support serif text and gold rules.
 Quotes and callouts use gallery labels in Reading view and Live Preview.
 Tables use catalogue rows. Small-cap headings separate the exhibits.
+Local images have mat frames.
 
 ## Screenshots
 
@@ -11,7 +12,7 @@ These images show the desktop renderer with a test note.
 
 ![Light reading view](images/light-main-1280-preview.jpg)
 ![Dark reading view](images/dark-main-1280-preview.jpg)
-![Content blocks](images/light-preview-table.jpg)
+![Gallery image and content blocks](images/light-preview-image.jpg)
 ![Narrow reading view](images/dark-main-420-preview.jpg)
 
 ## Install
@@ -63,11 +64,11 @@ Check text and border contrast after you change colors.
 
 ## Known limits
 
-- Image mat styling is present in CSS but was not tested with the fixture. Image frames add space around images. Use a CSS snippet to remove their border for edge-to-edge diagrams.
+- Image frames add space around images. Use a CSS snippet to remove their border for edge-to-edge diagrams.
 - Small caps depend on the installed serif font. Georgia is a fallback.
 - H4 through H6 use uppercase labels. Long headings can wrap on narrow panes.
 - Wide tables and code blocks can need horizontal scrolling.
-- Callout icons and left edges keep native type colors. Gold top rules unify the placards. Warning and danger callouts also have distinct borders.
+- Callout icons and three-pixel spines use type colors from the gallery palette. Gold top rules unify the placards. Warning callouts also have a double top rule.
 - Plugin views can use their own styles. They were not part of the fixture test.
 - Automated contrast checks do not certify WCAG conformance. Screen reader use has not been tested.
 

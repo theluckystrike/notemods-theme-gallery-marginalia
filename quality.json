@@ -1,14 +1,11 @@
 {
   "schemaVersion": 1,
   "theme": "Gallery Marginalia",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "status": "HOLD",
-  "score": 75,
-  "requiredScore": 95,
-  "reviewedAt": "2026-10-14T15:05:14",
-  "reviewer": "claude-orchestrator",
   "accepted": false,
+  "requiredScore": 95,
   "directoryApprovalClaimed": false,
-  "majorDefects": [],
-  "note": "This records the 1.0.0 source review. Version 1.0.1 requires a new independent review. This score does not apply to the current files."
+  "themeCssSha256": "28d89ad4ecc48e75cda9d0f7961eb79b8cfaff973dc4d1aae4ca3498797eaa9c",
+  "note": "Independent review is pending for this revision. Prior scores do not apply to these files."
 }

@@ -41,9 +41,12 @@
     "monospace": "\"SFMono-Regular\", \"Menlo\", \"Consolas\", monospace"
   },
   "verification": {
-    "localGate": "pending",
+    "status": "review pending",
+    "themeCssSha256": "28d89ad4ecc48e75cda9d0f7961eb79b8cfaff973dc4d1aae4ca3498797eaa9c",
+    "localGate": "pass",
     "independentCodeGate": "pending",
     "visualReview": "pending",
     "releaseReady": false
-  }
+  },
+  "version": "1.0.1"
 }
